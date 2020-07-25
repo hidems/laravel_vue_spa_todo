@@ -6,7 +6,7 @@ https://reffect.co.jp/laravel/finally-understand-laravel-on-docker#MySQL-2
 
 # How to...
 ## composer update
-docker run --rm -v /mnt/c/Users/miura/program/env_laravel-docker/src:/app composer update (install?)
+docker run --rm -v {Current Directly}/src:/app composer update (install?)
 ## Make .env file
 DB_CONNECTION=mysql
 DB_HOST=mysql
@@ -19,7 +19,7 @@ docker-compose exec php php artisan key:generate
 -> Write down automatically `APP_KEY`
 
 # laravel/ui package
-docker run --rm -v /mnt/c/Users/miura/program/env_laravel-docker/src:/app composer require laravel/ui
+docker run --rm -v {Current Directly}/src:/app composer require laravel/ui
 docker exec -it php php artisan ui vue --auth
-docker run --rm -v /mnt/c/Users/miura/program/env_laravel-docker/src:/usr/src/app -w /usr/src/app node npm install && npm run dev
+docker run --rm -v {Current Directly}/src:/usr/src/app -w /usr/src/app node npm install && npm run dev
 docker-compose exec php php artisan migrate
