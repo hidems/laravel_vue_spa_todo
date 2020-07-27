@@ -6,8 +6,8 @@ https://reffect.co.jp/laravel/finally-understand-laravel-on-docker#MySQL-2
 
 # How to...
 ## Install laravel by composer
-docker run --rm -v /Users/reffect/Desktop/laravel_docker/src:/app composer create-project --prefer-dist laravel/laravel .
-~## composer update~
+docker run --rm -v {Current Directly}/src:/app composer create-project --prefer-dist laravel/laravel .
+## ~composer update~
 ~docker run --rm -v {Current Directly}/src:/app composer update (install?)~
 ## Make .env file
 DB_CONNECTION=mysql
