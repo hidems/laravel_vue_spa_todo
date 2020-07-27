@@ -5,8 +5,10 @@ Ref by...
 https://reffect.co.jp/laravel/finally-understand-laravel-on-docker#MySQL-2
 
 # How to...
-## composer update
-docker run --rm -v {Current Directly}/src:/app composer update (install?)
+## Install laravel by composer
+docker run --rm -v /Users/reffect/Desktop/laravel_docker/src:/app composer create-project --prefer-dist laravel/laravel .
+~## composer update~
+~docker run --rm -v {Current Directly}/src:/app composer update (install?)~
 ## Make .env file
 DB_CONNECTION=mysql
 DB_HOST=mysql
@@ -14,7 +16,7 @@ DB_PORT=3306
 DB_DATABASE=laravel
 DB_USERNAME=root
 DB_PASSWORD=password
-## Create encryption key
+## Create encryption key (It may be not needed)
 docker-compose exec php php artisan key:generate
 -> Write down automatically `APP_KEY`
 ## Top page
