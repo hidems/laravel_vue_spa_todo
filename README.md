@@ -5,6 +5,9 @@ Ref by...
 https://reffect.co.jp/laravel/finally-understand-laravel-on-docker#MySQL-2
 
 # How to...
+## Start Dcoker
+docker-compose up -d
+**It must be executed at first.**
 ## Install laravel by composer
 docker run --rm -v {Current Directly}/src:/app composer create-project --prefer-dist laravel/laravel .
 ## ~composer update~
