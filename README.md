@@ -4,6 +4,7 @@ Simple Laravel environment by Docker and Docker-compose.
 Ref by...
 https://reffect.co.jp/laravel/finally-understand-laravel-on-docker#MySQL-2
 
+
 # How to...
 ## Start Dcoker
 docker-compose up -d
@@ -36,7 +37,8 @@ docker-compose exec php php artisan key:generate
 ## Top page
 http://127.0.0.1:8080/
 
-#Ohter
+
+# Ohter
 ## laravel/ui package
 docker run --rm -v {Current Directly}/src:/app composer require laravel/ui
 docker exec -it php php artisan ui vue --auth
