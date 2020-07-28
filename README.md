@@ -32,6 +32,7 @@ DB_PASSWORD=password
 
 ## Create encryption key (It may be not needed)
 docker-compose exec php php artisan key:generate
+
 -> Write down automatically `APP_KEY`
 
 ## Top page
