@@ -52,3 +52,11 @@ docker-compose exec php php artisan migrate
 # 課題
 ## src and db
 最初からデータ入りにすべきか、なしにすべきか…今のDockercompose.ymlで冪等性を保てるようにしたい。
+
+## src
+データ有: composer updateでvendor等の再ダウンロードが必要。 
+データ無:
+
+## db
+データ有:データベース名の変更ができない。ファイル名の変更でできる？
+データ無:
