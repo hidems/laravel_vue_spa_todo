@@ -49,7 +49,14 @@ docker run --rm -v {Current Directly}/src:/usr/src/app -w /usr/src/app node npm 
 
 docker-compose exec php php artisan migrate
 
-# 課題
+# Issue
+## Too slow and ideas of sollution
+Reduce mount files.
+https://qiita.com/ProjectEuropa/items/c094cfb4aac2968a9901
+
+Use docker-sync.
+https://qiita.com/reflet/items/ee15bf6b1b90a3a90905
+
 ## src and db
 最初からデータ入りにすべきか、なしにすべきか…今のDockercompose.ymlで冪等性を保てるようにしたい。
 
