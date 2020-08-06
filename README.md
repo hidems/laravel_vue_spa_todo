@@ -59,6 +59,8 @@ https://qiita.com/reflet/items/ee15bf6b1b90a3a90905
 
 https://qiita.com/miyawa-tarou/items/7ffdd8af86c57ca80ed1
 
+https://stackoverflow.com/questions/63036490/docker-is-extremely-slow-when-running-laravel-on-nginx-container-wsl2
+
 ## src and db
 最初からデータ入りにすべきか、なしにすべきか…今のDockercompose.ymlで冪等性を保てるようにしたい。
 
