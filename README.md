@@ -57,6 +57,8 @@ https://qiita.com/ProjectEuropa/items/c094cfb4aac2968a9901
 Use docker-sync.
 https://qiita.com/reflet/items/ee15bf6b1b90a3a90905
 
+https://qiita.com/miyawa-tarou/items/7ffdd8af86c57ca80ed1
+
 ## src and db
 最初からデータ入りにすべきか、なしにすべきか…今のDockercompose.ymlで冪等性を保てるようにしたい。
 
