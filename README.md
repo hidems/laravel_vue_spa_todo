@@ -51,6 +51,9 @@ docker-compose exec php php artisan migrate
 
 # Issue
 ## Too slow and ideas of sollution
+It is because of WSL2. Not to use WSL2, then it was improved.
+https://stackoverflow.com/questions/63036490/docker-is-extremely-slow-when-running-laravel-on-nginx-container-wsl2
+
 Reduce mount files.
 https://qiita.com/ProjectEuropa/items/c094cfb4aac2968a9901
 
@@ -59,7 +62,6 @@ https://qiita.com/reflet/items/ee15bf6b1b90a3a90905
 
 https://qiita.com/miyawa-tarou/items/7ffdd8af86c57ca80ed1
 
-https://stackoverflow.com/questions/63036490/docker-is-extremely-slow-when-running-laravel-on-nginx-container-wsl2
 
 ## src and db
 最初からデータ入りにすべきか、なしにすべきか…今のDockercompose.ymlで冪等性を保てるようにしたい。
