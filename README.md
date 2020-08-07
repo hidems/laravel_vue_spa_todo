@@ -30,6 +30,10 @@ DB_USERNAME=root
 
 DB_PASSWORD=password
 
+### If you want to change DB name...
+Change folder name of ~/db/laravel -> ~/db/{your_name}. 
+Then, recreate dontainer.
+
 ## Create encryption key (It may be not needed)
 docker-compose exec php php artisan key:generate
 
@@ -54,6 +58,7 @@ docker-compose exec php php artisan migrate
 It is because of WSL2. Not to use WSL2, then it was improved.
 https://stackoverflow.com/questions/63036490/docker-is-extremely-slow-when-running-laravel-on-nginx-container-wsl2
 
+### Other ideas to improve.
 Reduce mount files.
 https://qiita.com/ProjectEuropa/items/c094cfb4aac2968a9901
 
@@ -75,8 +80,8 @@ composer updateでvendor等の再ダウンロードが必要。
 
 ## db
 ### データ有
-データベース名の変更ができない。.envやdocker-compose.yml内を書き換えただけでは変更できない。laravelの名前が保持される。
-db下のファイル名の変更でできる？
+現状
+
 ### データ無
 dbコンテナの起動を行う際に、docker-compose.ymlのmysqlに下記コードを入れないと正しく起動できない。なぜ？
 ```
