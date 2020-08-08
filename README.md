@@ -6,10 +6,10 @@ https://reffect.co.jp/laravel/finally-understand-laravel-on-docker#MySQL-2
 
 
 # How to...
-## Start Dcoker
-docker-compose up -d
-
-**It must be executed at first.**
+## Create db folder
+```
+mkdir db
+```
 
 ## Change DB name
 If you want to change DB name, you need to change change 'docker-compose.yml'.
@@ -19,13 +19,25 @@ environment:
       MYSQL_DATABASE: lara_db # Here!!
 ```
 
+## Start Dcoker
+```
+docker-compose up -d
+```
+
+**It must be executed at first.**
+
+
 ## Install laravel by composer
+```
 docker run --rm -v {Current Directly}/src:/app composer create-project --prefer-dist laravel/laravel .
+```
 
 ## composer update (If already installed)
+```
 docker run --rm -v {Current Directly}/src:/app composer update (install?)
+```
 
-## Make .env file
+## Edit `src/.env` file
 ```
 DB_CONNECTION=mysql
 DB_HOST=mysql
@@ -35,25 +47,16 @@ DB_USERNAME=root
 DB_PASSWORD=password
 ```
 
-## Create encryption key (It may be not needed)
-docker-compose exec php php artisan key:generate
-
--> Write down automatically `APP_KEY`
-
-## Fail to download files in db (It may be not needed)
-Add this code under mysql in `docker-compose.yml`.
+Confirm DB work correctly
 ```
-depends_on:
-      -  php
-      -  mysql
-user: "1000:50" # Here!!
+docker-compose exec php php artisan migrate
 ```
 
 ## Top page
 http://127.0.0.1:8080/
 
 
-# Ohter
+# Plugin for Laravel
 ## laravel/ui package
 ```
 docker run --rm -v {Current Directly}/src:/app composer require laravel/ui
@@ -62,7 +65,23 @@ docker run --rm -v {Current Directly}/src:/usr/src/app -w /usr/src/app node npm 
 docker-compose exec php php artisan migrate
 ```
 
-# Issue
+
+# Troubleshooting
+## Create encryption key
+```
+docker-compose exec php php artisan key:generate
+```
+-> Write down automatically `APP_KEY` in `.env`
+
+## Fail to download files in db
+Add this code under mysql in `docker-compose.yml`.
+```
+depends_on:
+      -  php
+      -  mysql
+user: "1000:50" # Here!!
+```
+
 ## Too slow and ideas of sollution
 It is because of WSL2. Not to use WSL2, then it was improved.
 https://stackoverflow.com/questions/63036490/docker-is-extremely-slow-when-running-laravel-on-nginx-container-wsl2
