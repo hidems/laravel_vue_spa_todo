@@ -86,7 +86,11 @@ user: "1000:50" # Here!!
 It is because of WSL2. Not to use WSL2, then it was improved.
 https://stackoverflow.com/questions/63036490/docker-is-extremely-slow-when-running-laravel-on-nginx-container-wsl2
 
+-> Project moves to out of windows mount directly(/mnt).
+
 ### Other ideas to improve.
+Use "redis" for cash and session.
+
 Reduce mount files.
 https://qiita.com/ProjectEuropa/items/c094cfb4aac2968a9901
 
