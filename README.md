@@ -60,6 +60,7 @@ http://127.0.0.1:8080/
 ## laravel/ui package
 ```
 docker run --rm -v {Current Directly}/src:/app composer require laravel/ui
+* For Laravel 6.* -> composer require laravel/ui:^1.0 --dev
 docker exec -it php php artisan ui vue --auth
 docker run --rm -v {Current Directly}/src:/usr/src/app -w /usr/src/app node npm install && npm run dev
 docker-compose exec php php artisan migrate
