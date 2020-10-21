@@ -12,7 +12,7 @@ mkdir db
 ```
 
 ## Change DB name
-If you want to change DB name, you need to change change 'docker-compose.yml'.
+If you want to change DB name, you need to change change 'docker-compose.yml'. 
 ```
 environment:
       MYSQL_ROOT_PASSWORD: password
@@ -27,9 +27,9 @@ docker-compose up -d
 **It must be executed at first.**
 
 
-## Install laravel by composer
+## Install laravel by composer (Ver 6.* if you want latest ver, remove "6.*")
 ```
-docker run --rm -v {Current Directly}/src:/app composer create-project --prefer-dist laravel/laravel .
+docker run --rm -v {Current Directly}/src:/app composer create-project --prefer-dist laravel/laravel . "6.*"
 ```
 
 ## composer update (If already installed)
