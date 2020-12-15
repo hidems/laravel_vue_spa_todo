@@ -24,6 +24,8 @@ environment:
 docker-compose up -d
 ```
 
+**You need to exchange /src, if you want to use own code.**
+
 **It must be executed at first.**
 
 
