@@ -23,10 +23,9 @@ environment:
 ```
 docker-compose up -d
 ```
-
+**It must be executed at first.**
 **You need to exchange /src, if you want to use own code.**
 
-**It must be executed at first.**
 
 
 ## Install laravel by composer (Ver 6.* if you want latest ver, remove "6.*")
