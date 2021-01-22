@@ -1,11 +1,7 @@
 # Overview
 Simple Laravel environment by Docker and Docker-compose.
 
-Ref by...
-https://reffect.co.jp/laravel/finally-understand-laravel-on-docker#MySQL-2
-
-
-# How to...
+# How to start
 ## Create db folder
 ```
 mkdir db
@@ -24,10 +20,7 @@ environment:
 docker-compose up -d
 ```
 **It must be executed at first.**
-
 **You need to exchange /src, if you want to use own code.**
-
-
 
 ## Install laravel by composer (Ver 6.* if you want latest ver, remove "6.*")
 ```
@@ -42,11 +35,16 @@ docker run --rm -v {Current Directly}/src:/app composer update (install?)
 ## Edit `src/.env` file
 ```
 DB_CONNECTION=mysql
-DB_HOST=mysql
+DB_HOST=db
 DB_PORT=3306
 DB_DATABASE=laravel # Set DB name
 DB_USERNAME=root
 DB_PASSWORD=password
+```
+
+Need to change files's authority in case of WSL2
+```
+sudo chown {user_name}:{user_name} /src -R
 ```
 
 Confirm DB work correctly
@@ -54,9 +52,16 @@ Confirm DB work correctly
 docker-compose exec php php artisan migrate
 ```
 
-## Top page
-http://127.0.0.1:8080/
+## Access
+Top page: http://127.0.0.1:8080/
+phpmyadmin: http://127.0.0.1:8888/
 
+Need to change files's authority in docker container, in case of WSL2
+```
+docker-compose exec php sh
+chown www-data:www-data storage -R
+chown www-data:www-data bootstrap/cache -R
+```
 
 # Plugin for Laravel
 ## laravel/ui package
