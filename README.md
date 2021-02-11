@@ -24,13 +24,16 @@ docker-compose up -d
 
 ## Install laravel by composer (Ver 6.* if you want latest ver, remove "6.*")
 ```
-docker run --rm -v {Current Directly}/src:/app composer create-project --prefer-dist laravel/laravel . "6.*"
+docker-compose exec php composer create-project --prefer-dist laravel/laravel . "6.*"
 ```
+~~docker run --rm -v {Current Directly}/src:/app composer create-project --prefer-dist laravel/laravel . "6.*"~~
 
 ## composer update (If already installed)
 ```
-docker run --rm -v {Current Directly}/src:/app composer update (install?)
+docker-compose exec php composer update (or install)
 ```
+~~docker run --rm -v {Current Directly}/src:/app composer update ( or install)~~
+
 
 ## Edit `src/.env` file
 ```
@@ -58,22 +61,21 @@ phpmyadmin: http://127.0.0.1:8888/
 
 Need to change files's authority in docker container, in case of WSL2
 ```
-docker-compose exec php sh
-chown www-data:www-data storage -R
-chown www-data:www-data bootstrap/cache -R
+docker-compose exec php chown www-data:www-data storage -R
+docker-compose exec php chown www-data:www-data bootstrap/cache -R
 ```
 
 # Plugin for Laravel
 ## laravel/ui package
 ```
-docker run --rm -v {Current Directly}/src:/app composer require laravel/ui
+docker-compose exec php composer require laravel/ui
 * For Laravel 6.* -> composer require laravel/ui:^1.0 --dev
 docker-compose exec php php artisan ui vue --auth
-# docker exec -it php php artisan ui vue --auth
 docker run --rm -v {Current Directly}/src:/usr/src/app -w /usr/src/app node npm install && npm run dev
 docker-compose exec php php artisan migrate
 ```
-
+~~docker run --rm -v {Current Directly}/src:/app composer require laravel/ui~~
+~~docker exec -it php php artisan ui vue --auth~~
 
 # Troubleshooting
 ## Create encryption key
