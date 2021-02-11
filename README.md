@@ -75,6 +75,7 @@ docker run --rm -v {Current Directly}/src:/usr/src/app -w /usr/src/app node npm 
 docker-compose exec php php artisan migrate
 ```
 ~~docker run --rm -v {Current Directly}/src:/app composer require laravel/ui~~
+
 ~~docker exec -it php php artisan ui vue --auth~~
 
 # Troubleshooting
