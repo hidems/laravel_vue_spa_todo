@@ -71,8 +71,13 @@ docker-compose exec php chown www-data:www-data bootstrap/cache -R
 docker-compose exec php composer require laravel/ui
 * For Laravel 6.* -> composer require laravel/ui:^1.0 --dev
 docker-compose exec php php artisan ui vue --auth
-docker run --rm -v {Current Directly}/src:/usr/src/app -w /usr/src/app node npm install && npm run dev
-* In Laravel 8, `npm run dev` makes error and it is impossible to use Vue Component 20210324.
+
+docker run --rm -v {Current Directly}/src:/usr/src/app -w /usr/src/app node npm install
+docker run --rm -v {Current Directly}/src:/usr/src/app -w /usr/src/app node npm run dev
+or
+docker-compose exec php npm install
+docker-compose exec php npm run dev
+
 docker-compose exec php php artisan migrate
 ```
 ~~docker run --rm -v {Current Directly}/src:/app composer require laravel/ui~~
