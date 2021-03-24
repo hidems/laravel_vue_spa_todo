@@ -69,7 +69,9 @@ docker-compose exec php chown www-data:www-data bootstrap/cache -R
 ## laravel/ui package
 ```
 docker-compose exec php composer require laravel/ui
-* For Laravel 6.* -> composer require laravel/ui:^1.0 --dev
+* For Laravel 6
+docker-compose exec php composer require laravel/ui:^1.0 --dev
+
 docker-compose exec php php artisan ui vue --auth
 
 docker run --rm -v {Current Directly}/src:/usr/src/app -w /usr/src/app node npm install
@@ -77,6 +79,8 @@ docker run --rm -v {Current Directly}/src:/usr/src/app -w /usr/src/app node npm 
 or
 docker-compose exec php npm install
 docker-compose exec php npm run dev
+* For Laravel 8 
+docker-compose exec php npm install vue-loader@^15.9.5 --save-dev --legacy-peer-deps
 
 docker-compose exec php php artisan migrate
 ```
