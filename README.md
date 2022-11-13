@@ -11,6 +11,13 @@ https://github.com/hidems/env_laravel-docker/blob/main/README.md
 ### Attention 
 No need to set Redis in .env
 
+## npm
+```
+cd src
+npm install
+npm run dev
+```
+
 ## Access
 http://127.0.0.1:8080/
 
